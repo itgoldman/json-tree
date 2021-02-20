@@ -19,7 +19,7 @@ Example
 	<div id="example"></div>
 </body>
 <script>
-	var obj = {"foo" : "bar", "foos" : ["b","a","r"], "bar" : {"foo":"bar", "bar":false,"foobar":1234}};
+	var obj = {"foo": "bar", "foos": ["b","a","r"], "bar": {"foo":"bar", "bar":false, "foobar":1234}};
 	var html_json = JSONTree.create(obj);
 	document.getElementById("example").innerHTML = html_json
 </script>
