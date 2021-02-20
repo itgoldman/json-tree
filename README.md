@@ -8,19 +8,21 @@ Example
 
 
 ```html
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>json tree example</title>
-		<link href="jsontree.css" rel="stylesheet">
-		<script src="jsontree.js"></script>
-  	</head>
-	<body>
-		<div id="example"></div>
-	</body>
-	<script>
-	var json = {"foo" : "bar", "foos" : ["b","a","r"], "bar" : {"foo":"bar", "bar":false,"foobar":1234}};
-	document.getElementById("example").innerHTML = JSONTree.create(json);
-	</script>
+<head>
+	<title>json tree example</title>
+	<link href="src/jsontree.css" rel="stylesheet">
+	<script src="src/jsontree.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+</body>
+<script>
+	var obj = {"foo" : "bar", "foos" : ["b","a","r"], "bar" : {"foo":"bar", "bar":false,"foobar":1234}};
+	var html_json = JSONTree.create(obj);
+	document.getElementById("example").innerHTML = html_json
+</script>
 </html>
 ```
 #### Full view

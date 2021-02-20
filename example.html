@@ -11,32 +11,9 @@
 	<div id="example"></div>
 </body>
 <script>
-	var obj = {
-		foo: {
-			bar: 'foobar',
-			baz: 'foobaz',
-			qux: [
-				{
-					foobar: 'bar',
-					foobaz: 'baz'
-				}
-			]
-		},
-		bar: [
-			{ foo: 'barfoo' },
-			{ qux: 'barqux' }
-		],
-		qux: [
-			'foo',
-			'bar',
-			'foobar'
-		],
-		baz: true,
-		foobar: [0, 1, 2, 3],
-		barfoo: null
-	}
-	var result = JSONTree.create(obj);
-	document.getElementById("example").innerHTML = result;
+	var obj = {"foo" : "bar", "foos" : ["b","a","r"], "bar" : {"foo":"bar", "bar":false,"foobar":1234}};
+	var html_json = JSONTree.create(obj);
+	document.getElementById("example").innerHTML = html_json
 </script>
 
 </html>
