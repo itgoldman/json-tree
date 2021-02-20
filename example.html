@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>json tree example</title>
-		<link href="css/jsontree.css" rel="stylesheet">
-		<script src="src/jsontree.js"></script>
-  	</head>
-	<body>
-		<div id="example"></div>
-	</body>
-	<script>
-    var result = JSONTree.create({
-      foo: {
-        bar: 'foobar',
-        baz: 'foobaz',
-        qux: [
-          {
-            foobar: 'bar',
-            foobaz: 'baz'
-          }
-        ]
-      },
-      bar: [
-        {foo: 'barfoo'},
-        {qux: 'barqux'}
-      ],
-      qux: [
-        'foo',
-        'bar',
-        'foobar'
-      ],
-      baz: true,
-      foobar: [0, 1, 2, 3],
-      barfoo: null
-    });
+
+<head>
+	<title>json tree example</title>
+	<link href="src/jsontree.css" rel="stylesheet">
+	<script src="src/jsontree.js"></script>
+</head>
+
+<body>
+	<div id="example"></div>
+</body>
+<script>
+	var obj = {
+		foo: {
+			bar: 'foobar',
+			baz: 'foobaz',
+			qux: [
+				{
+					foobar: 'bar',
+					foobaz: 'baz'
+				}
+			]
+		},
+		bar: [
+			{ foo: 'barfoo' },
+			{ qux: 'barqux' }
+		],
+		qux: [
+			'foo',
+			'bar',
+			'foobar'
+		],
+		baz: true,
+		foobar: [0, 1, 2, 3],
+		barfoo: null
+	}
+	var result = JSONTree.create(obj);
 	document.getElementById("example").innerHTML = result;
-	</script>
+</script>
+
 </html>
