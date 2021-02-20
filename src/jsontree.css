@@ -1,115 +1,115 @@
 .jstValue {
-    white-space: pre;
-    font-family: courier new, monospace;
+	white-space: pre;
+	font-family: courier new, monospace;
 }
 
 .jstComma {
-    white-space: pre;
+	white-space: pre;
 }
 
 .jstProperty {
-    word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .jstWSP {
-    white-space: pre;
+	white-space: pre;
 }
 
 .jstBracket {
-    color: black;
+	color: black;
 }
 
 .jstFold::after {
-    content: ' -';
-    cursor : pointer;
+	content: ' -';
+	cursor : pointer;
 }
 
 .jstExpand {
-    white-space: normal;
+	white-space: normal;
 }
 
 .jstExpand::after {
-    content: ' +';
-    cursor : pointer;
+	content: ' +';
+	cursor : pointer;
 }
 
 .jstPlay::after {
-    content: '▶';
-    cursor: pointer;
+	content: '▶';
+	cursor : pointer;
 }
 
 /** size */
 .jstFold,
 .jstExpand {
-    font-size: 1em;
+	font-size: 1em;
 }
 
 .jstFolded {
-    white-space: normal !important;
+	white-space: normal !important;
 }
 
 .jstHiddenBlock {
-    display: none;
+	display: none;
 }
 
 /* colors and styles below */
 .jstFold:hover::after,
 .jstExpand:hover::after,
 .jstPlay:hover::after {
-    color: lightblue;
+	color: lightblue;
 }
 
 .jstFold::after,
 .jstExpand::after {
-    font-weight: bold;
-    color      : black;
+	font-weight: bold;
+	color      : black;
 }
 
 .jstProperty {
-    color: #881280;
-    color: #666;
+	color: #881280;
+	color: #666;
 }
 
 .jstEmpty {
-    color: gray;
+	color: gray;
 }
 
 .jstBool {
-    color: #2525CC;
-    color: rgb(28, 0, 207);
+	color: #2525CC;
+	color: rgb(28, 0, 207);
 }
 
 .jstNum {
-    color: #D036D0;
-    color: rgb(28, 0, 207);
+	color: #D036D0;
+	color: rgb(28, 0, 207);
 
 }
 
 .jstNull {
-    color: gray;
+	color: gray;
 }
 
 .jstStr {
-    color: rgb(196, 26, 22);
-    color: #2DB669;
+	color: rgb(196, 26, 22);
+	color: #2DB669;
 }
 
 .jstFunction {
-    color: #0000FF;
+	color: #0000FF;
 }
 
 .jstDate {
-    color: #AD00FF;
+	color: #AD00FF;
 }
 
 .jstSeen {
-    color: lightgray;
+	color: lightgray;
 }
 
 .jstDom {
-    background: lightgray;
+	background: lightgray;
 }
 
 .jstOther {
-    color: red;
+	color: red;
 }
