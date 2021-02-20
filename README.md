@@ -6,7 +6,6 @@ simple JS library that creates an html navigable tree from JSON object.
 Example
 ------------
 
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
