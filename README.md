@@ -11,7 +11,7 @@ Example
 <html lang="en">
 	<head>
 		<title>json tree example</title>
-		<link href="css/jsontree.css" rel="stylesheet">
+		<link href="jsontree.css" rel="stylesheet">
 		<script src="jsontree.js"></script>
   	</head>
 	<body>
@@ -23,10 +23,13 @@ Example
 	</script>
 </html>
 ```
-Full view
+#### Full view
+
 ![example 1](imgs/example_1.png)
 
-Collapsed view
+#### Collapsed view
+
 ![example 2](imgs/example_2.png)
+
 
 
