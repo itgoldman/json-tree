@@ -1,6 +1,6 @@
 .jstValue {
 	white-space: pre;
-	font-family: courier new, monospace;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 .jstComma {
@@ -34,8 +34,8 @@
 }
 
 .jstPlay::after {
-	content: '▶';
 	cursor : pointer;
+	content: '▶';
 }
 
 /** size */
@@ -62,7 +62,7 @@
 .jstFold::after,
 .jstExpand::after {
 	font-weight: bold;
-	color      : black;
+	color: black;
 }
 
 .jstProperty {
