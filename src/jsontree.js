@@ -102,11 +102,13 @@ var JSONTree = (function () {
 					if (value instanceof Date) {
 						return _jstRaw(JSON.stringify(value), d, "jstDate");
 					}
+
+					seen.push(value);
+
 					if (value instanceof Array) {
 						return _jstArr(value, depth, indent);
 					}
 
-					seen.push(value);
 					return _jstObj(value, depth, indent);
 
 				default:
