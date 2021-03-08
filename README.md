@@ -55,4 +55,20 @@ Example
 ![example 2](imgs/example_2.png)
 
 
+Settings
+------------
+you can and should pass settings object as second argument to function. see source code for possible/ default settings:
+```js
+var default_settings = {
+	indent: 4,
+	collapsed_from_depth: 0,
+	prefix: "jstBlock_",
+	enable_ctrl_or_shift: true,
+	show_null: true,
+	show_functions: true,
+	show_execute: false,
+	show_dom: false,
+	banned_properties: []
+}
+```	
 
