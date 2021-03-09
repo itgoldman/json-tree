@@ -1,10 +1,9 @@
-json-tree
-=========
+# json-tree
+
 
 simple JS library that creates an html navigable tree from JSON object.
 
-Example
-------------
+## Example
 
 ```html
 <!DOCTYPE html>
@@ -55,8 +54,7 @@ Example
 ![example 2](imgs/example_2.png)
 
 
-Settings
-------------
+## Settings
 you can and should pass settings object as second argument to function. see source code for possible/ default settings:
 ```js
 var default_settings = {
@@ -71,4 +69,22 @@ var default_settings = {
 	banned_properties: []
 }
 ```	
+
+
+
+## Features:
+* selectable text (without the "+" and "-" buttons which are pseudo-elements)
+* beautifies JSON tree
+* cyclical reference defense 
+* prints functions
+* small footprint 
+* no external dependencies
+* configurable settings
+
+and more.
+
+enjoy.
+
+
+
 
