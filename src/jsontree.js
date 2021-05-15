@@ -27,6 +27,7 @@ var JSONTree = (function () {
 		show_functions: true,
 		show_execute: false,
 		show_dom: false,
+		hide_dom_functions: true,
 		banned_properties: []
 	}
 
@@ -96,7 +97,8 @@ var JSONTree = (function () {
 					if (seen.indexOf(value) >= 0) {
 						return _jstRaw("...SEEN...", d, "jstSeen");
 					}
-					if (_isDOM(value) && !actual_settings.show_dom) {
+					var is_dom
+					if (!actual_settings.show_dom && (is_dom = _isDOM(value))) {
 						return _jstRaw("...DOM...", d, "jstDom");
 					}
 					if (value instanceof Date) {
@@ -109,7 +111,7 @@ var JSONTree = (function () {
 						return _jstArr(value, depth, indent);
 					}
 
-					return _jstObj(value, depth, indent);
+					return _jstObj(value, depth, indent, is_dom);
 
 				default:
 					return _jstRaw(value, d, "jstOther");
@@ -137,14 +139,21 @@ var JSONTree = (function () {
 
 		// filtering nulls/functions 
 		var items = []
+		var value
 		for (var property in object) {
-			if (!actual_settings.show_null && object[property] == null) {
+			try {
+				value = object[property]
+			} catch (e) {
+				console.log(e)
+				continue;
+			}
+			if (!actual_settings.show_null && value == null) {
 				continue
 			}
-			if (!actual_settings.show_functions && typeof object[property] == 'function') {
+			if (!actual_settings.show_functions && typeof value == 'function') {
 				continue
 			}
-			items.push(object[property])
+			items.push(value)
 		}
 
 		var content = items.map(function (element, index) {
@@ -168,7 +177,7 @@ var JSONTree = (function () {
 		} : {});
 	}
 
-	function _jstObj(object, depth, indent) {
+	function _jstObj(object, depth, indent, is_dom) {
 		var d = indent ? depth : 0;
 		var pair = ["{", "}"];
 
@@ -178,11 +187,23 @@ var JSONTree = (function () {
 
 		// filtering nulls/functions 
 		var properties = []
+		var value;
 		for (var property in object) {
-			if (!actual_settings.show_null && object[property] == null) {
+			try {
+				value = object[property]
+			} catch (e) {
+				console.log(e)
+				continue;
+			}
+
+			if (!actual_settings.show_null && value == null) {
 				continue
 			}
-			if (!actual_settings.show_functions && typeof object[property] == 'function') {
+			if (!actual_settings.show_functions && typeof value == 'function') {
+				continue
+			}
+
+			if (is_dom && actual_settings.hide_dom_functions && typeof value == 'function') {
 				continue
 			}
 			properties.push(property)
